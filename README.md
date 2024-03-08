@@ -1,5 +1,5 @@
 #  LECTURE 1 : TDARG - ASSERT
-**I.	COMPILER**
+**I.Thư viện stdarg**
 
 ```
 
