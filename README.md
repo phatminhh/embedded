@@ -8,7 +8,7 @@
 - va_arg: Truy cập một đối số trong danh sách. Hàm này nhận một đối số của kiểu được xác định bởi tham số thứ hai
 - va_end: Kết thúc việc sử dụng danh sách đối số biến đổi. Nó cần được gọi trước khi kết thúc hàm.
 
-```
+```c
 #include <stdio.h>
 #include<stdarg.h>
 int MUL(int arr,...){
@@ -29,7 +29,7 @@ return 0;
 }
 ```
 OUTPUT
-```
+```c
 MUX:16
 ```
 **I.Thư viện assert**
@@ -40,7 +40,7 @@ MUX:16
 - Dùng trong debug, dùng #define NDEBUG để tắt debug
 
 - Điều kiện đúng
- ```
+ ```c
 #include <stdio.h>
 #include <assert.h>
 int main() {
@@ -54,13 +54,13 @@ int main() {
     return 0;
 }
 ```
-```
+```c
 X is: 5
 ```
 
 -Điều kiện sai
 
-```
+```c
 #include <stdio.h>
 #include <assert.h>
 
@@ -75,8 +75,23 @@ int main() {
     return 0;
 }
 ```
-```
+```c
 Assertion failed: x == 10, file main.c, line 7
 ```
+**Các lỗi**
+- Lỗi truy cập mảng không an toàn.
+- Lỗi chia cho số 0.
+- Chia số nguyên cho số nguyên, kết quả là số thực.
 
+EX1
+```c
+#include <assert.h>
+
+#define ASSERT_IN_RANGE(val, min, max) assert((val) >= (min) && (val) <= (max))
+
+void setLevel(int level) {
+    ASSERT_IN_RANGE(level, 1, 10);
+    // Thiết lập cấp độ
+}
+```
 
