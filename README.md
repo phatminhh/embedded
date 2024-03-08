@@ -40,10 +40,9 @@ MUX:16
 - Dùng trong debug, dùng #define NDEBUG để tắt debug
 
 - Điều kiện đúng
-  ```
-  #include <stdio.h>
+ ```
+#include <stdio.h>
 #include <assert.h>
-
 int main() {
     int x = 5;
 
@@ -54,11 +53,13 @@ int main() {
     
     return 0;
 }
-  ```
+```
 ```
 X is: 5
 ```
+
 -Điều kiện sai
+
 ```
 #include <stdio.h>
 #include <assert.h>
