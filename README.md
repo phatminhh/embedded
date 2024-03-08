@@ -95,3 +95,17 @@ void setLevel(int level) {
 }
 ```
 
+EX2
+```c
+#include <assert.h>
+#include <stdint.h>
+
+#define ASSERT_SIZE(type, size) assert(sizeof(type) == (size))
+
+void checkTypeSizes() {
+    ASSERT_SIZE(uint32_t, 4);
+    ASSERT_SIZE(uint16_t, 2);
+    // Kiểm tra các kích thước kiểu dữ liệu khác
+}
+```
+
