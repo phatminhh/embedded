@@ -24,7 +24,58 @@ return val;
 }
 int main(int argc, char const *argv[])
 {
-printf("%d",MUL(4,2,2,2,2));
+printf("MUX:%d",MUL(4,2,2,2,2));
 return 0;
 }
 ```
+OUTPUT
+```
+MUX:16
+```
+**I.Thư viện assert**
+- Cung cấp macro assert. 
+- Macro này được sử dụng để kiểm tra một điều kiện. 
+- Nếu điều kiện đúng (true), không có gì xảy ra và chương trình tiếp tục thực thi.
+- Nếu điều kiện sai (false), chương trình dừng lại và thông báo một thông điệp lỗi.
+- Dùng trong debug, dùng #define NDEBUG để tắt debug
+
+- Điều kiện đúng
+  ```
+  #include <stdio.h>
+#include <assert.h>
+
+int main() {
+    int x = 5;
+
+    assert(x == 5);
+
+    // Chương trình sẽ tiếp tục thực thi nếu điều kiện là đúng.
+    printf("X is: %d", x);
+    
+    return 0;
+}
+  ```
+```
+X is: 5
+```
+-Điều kiện sai
+```
+#include <stdio.h>
+#include <assert.h>
+
+int main() {
+    int x = 5;
+
+    assert(x == 10);
+
+    // Chương trình sẽ tiếp tục thực thi nếu điều kiện là đúng.
+    printf("X is: %d", x);
+    
+    return 0;
+}
+```
+```
+Assertion failed: x == 10, file main.c, line 7
+```
+
+
